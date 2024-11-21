@@ -11,7 +11,7 @@ function onClick() {
 <template>
   <v-responsive class="border rounded">
     <v-app :theme="theme">
-      <v-app-bar class="px-3" color="grey-darken-4">
+      <v-app-bar class="px-3">
         <v-spacer></v-spacer>
 
         <v-btn
@@ -26,18 +26,25 @@ function onClick() {
         <v-container>
           <v-row>
             <v-col cols="12" md="6" class="mx-auto">
-              <v-card class="mx-auto" prepend-icon=" mdi-login" subtitle="Sign In">
+              <v-card class="mx-auto" prepend-icon=" mdi-account-plus" subtitle="Sign Up">
                 <template v-slot:title>
                   <span class="font-weight-black">ToolBucks</span>
                 </template>
 
-                <v-card-text class="bg-surface-light pt-4"
-                  ><v-sheet class="mx-auto">
+                <v-card-text class="pt-4">
+                  <v-sheet class="mx-auto">
                     <v-form fast-fail @submit.prevent>
+                      <v-text-field label="Firstname" variant="outlined"></v-text-field>
+                      <v-text-field label="Lastname" variant="outlined"></v-text-field>
                       <v-text-field label="Email" variant="outlined"></v-text-field>
 
                       <v-text-field
                         label="Password"
+                        type="password"
+                        variant="outlined"
+                      ></v-text-field>
+                      <v-text-field
+                        label="Confirm Password"
                         type="password"
                         variant="outlined"
                       ></v-text-field>
@@ -49,8 +56,8 @@ function onClick() {
                   <v-divider class="my-5"></v-divider>
 
                   <h5 class="text-center">
-                    Don't have account?
-                    <RouterLink to="/register">Click here to Register</RouterLink>
+                    Already have account?
+                    <RouterLink to="/">Click here to Login</RouterLink>
                   </h5>
                 </v-card-text>
               </v-card>
@@ -59,7 +66,7 @@ function onClick() {
         </v-container>
       </v-main>
 
-      <v-footer color="grey-darken-4" border app>© 2024</v-footer>
+      <v-footer color="black" border app>© 2024</v-footer>
     </v-app>
   </v-responsive>
 </template>
